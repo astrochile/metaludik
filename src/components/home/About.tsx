@@ -1,5 +1,5 @@
 import Image from "next/image";
-import CutLine from "@/components/CutLine";
+import { Reveal, RevealMask, Counter } from "@/components/Reveal";
 import { stats } from "@/lib/content";
 
 export default function About() {
@@ -7,62 +7,65 @@ export default function About() {
     <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28">
       <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
         <div className="lg:col-span-5">
-          <span className="font-mono text-xs uppercase tracking-[0.2em] text-orange">
-            Quiénes somos
-          </span>
-          <h2 className="mt-3 text-balance font-display text-4xl font-semibold uppercase leading-[1.02] text-ink sm:text-5xl">
-            Metal + lúdico
-            <span className="block text-orange">= Metaludik</span>
-          </h2>
+          <Reveal>
+            <span className="text-sm font-semibold text-orange">Quiénes somos</span>
+            <h2 className="mt-3 text-balance font-display text-4xl font-extrabold leading-[1.02] text-ink sm:text-5xl">
+              Metal + lúdico
+              <span className="block text-orange">= Metaludik</span>
+            </h2>
+          </Reveal>
 
-          <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-ink/75">
-            <p>
-              Samik Garrido lleva <strong className="text-ink">15 años en el oficio de la soldadura</strong>,
-              formado principalmente en el rubro minero, en procesos de extracción
-              de cobre. Hace 3 años decidió abrir su propio taller y buscó un
-              nombre que no lo encasillara solo en la metalmecánica tradicional:
-              así nació <strong className="text-ink">Metaludik</strong> — metal, con un
-              toque más lúdico, cercano y creativo.
-            </p>
-            <p>
-              Hoy Metaludik es un equipo de dos personas que trabaja con una
-              máquina de corte plasma CNC industrial y soldadura calificada,
-              acompañando cada proyecto desde la idea hasta la instalación.
-            </p>
-          </div>
+          <Reveal delay={0.1}>
+            <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-ink/70">
+              <p>
+                Samik Garrido lleva <strong className="text-ink">15 años en el oficio de la soldadura</strong>,
+                formado principalmente en el rubro minero, en procesos de extracción
+                de cobre. Hace 3 años decidió abrir su propio taller y buscó un
+                nombre que no lo encasillara solo en la metalmecánica tradicional:
+                así nació <strong className="text-ink">Metaludik</strong> — metal, con un
+                toque más lúdico, cercano y creativo.
+              </p>
+              <p>
+                Hoy Metaludik es un equipo de dos personas que trabaja con una
+                máquina de corte plasma CNC industrial y soldadura calificada,
+                acompañando cada proyecto desde la idea hasta la instalación.
+              </p>
+            </div>
+          </Reveal>
 
-          <blockquote className="mt-8 border-l-2 border-orange pl-5">
-            <p className="font-display text-xl italic leading-snug text-ink">
-              &ldquo;Cortamos ideas y el metal cobra vida — juntos construimos
-              futuro.&rdquo;
-            </p>
-            <cite className="mt-2 block font-mono text-xs not-italic uppercase tracking-widest text-graphite">
-              Samik Garrido, fundador de Metaludik
-            </cite>
-          </blockquote>
+          <Reveal delay={0.16}>
+            <blockquote className="mt-8 border-l-2 border-orange pl-5">
+              <p className="font-display text-xl italic leading-snug text-ink">
+                &ldquo;Acá las ideas se conversan, se dibujan, se cortan, se
+                sueldan y terminan convirtiéndose en algo real.&rdquo;
+              </p>
+              <cite className="mt-2 block text-xs font-medium not-italic text-steel-mid">
+                Samik Garrido, fundador de Metaludik
+              </cite>
+            </blockquote>
+          </Reveal>
         </div>
 
         <div className="lg:col-span-7">
-          <div className="relative aspect-[4/3] w-full overflow-hidden">
-            <Image
-              src="/images/proyectos/pasamanos.jpg"
-              alt="Terminación de pasamanos fabricado por Metaludik"
-              fill
-              className="object-cover"
-            />
-          </div>
+          <RevealMask className="aspect-[4/3] w-full">
+            <div className="relative h-full w-full">
+              <Image
+                src="/images/proyectos/pasamanos.jpg"
+                alt="Terminación de pasamanos fabricado por Metaludik"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </RevealMask>
 
-          <CutLine className="my-8 h-4 w-full" />
-
-          <dl className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4">
+          <dl className="mt-10 grid grid-cols-2 gap-x-6 gap-y-8 border-t border-line pt-8 sm:grid-cols-4">
             {stats.map((s) => (
               <div key={s.label}>
                 <dt className="sr-only">{s.label}</dt>
-                <dd className="font-display text-4xl font-semibold text-ink">
-                  {s.value}
-                  <span className="text-orange">{s.suffix}</span>
+                <dd className="font-display text-4xl font-extrabold text-ink">
+                  <Counter value={Number(s.value)} suffix={s.suffix} />
                 </dd>
-                <p className="mt-1 text-xs leading-snug text-graphite">{s.label}</p>
+                <p className="mt-1 text-xs leading-snug text-steel-mid">{s.label}</p>
               </div>
             ))}
           </dl>

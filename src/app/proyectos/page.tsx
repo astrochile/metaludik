@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import PageHeader from "@/components/PageHeader";
+import ProjectImage from "@/components/ProjectImage";
+import { Reveal } from "@/components/Reveal";
 import { projects } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -12,6 +12,19 @@ export const metadata: Metadata = {
   description:
     "Casos reales de Metaludik: letreros corporativos, estructuras metálicas, corte plasma CNC y proyectos personalizados en Rancagua.",
 };
+
+// composición editorial: alterna tamaños para que la grilla no se sienta uniforme
+const SPANS = [
+  "sm:col-span-2 lg:col-span-2 aspect-[16/10]",
+  "aspect-[4/5]",
+  "aspect-[4/5]",
+  "aspect-[4/5]",
+  "sm:col-span-2 lg:col-span-2 aspect-[16/10]",
+  "aspect-[4/5]",
+  "aspect-[4/5]",
+  "aspect-[4/5]",
+  "sm:col-span-2 lg:col-span-2 aspect-[16/10]",
+];
 
 export default function ProyectosPage() {
   return (
@@ -25,29 +38,18 @@ export default function ProyectosPage() {
         />
 
         <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20">
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {projects.map((p) => (
-              <Link key={p.slug} href={`/proyectos/${p.slug}`} className="group block">
-                <div className="relative aspect-[4/5] w-full overflow-hidden bg-mist">
-                  <Image
-                    src={p.cover}
-                    alt={p.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/90 to-transparent p-5">
-                    <span className="font-mono text-[11px] uppercase tracking-widest text-orange">
-                      {p.category}
-                    </span>
-                    <h2 className="mt-1 font-display text-lg font-semibold uppercase leading-tight text-white">
-                      {p.client}
-                    </h2>
-                    <span className="mt-1 block text-xs text-white/60">
-                      {p.location}
-                    </span>
-                  </div>
-                </div>
-              </Link>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {projects.map((p, i) => (
+              <Reveal key={p.slug} delay={(i % 3) * 0.06} className={SPANS[i % SPANS.length]}>
+                <ProjectImage
+                  href={`/proyectos/${p.slug}`}
+                  src={p.cover}
+                  alt={p.title}
+                  label={p.client}
+                  category={p.category}
+                  className="h-full"
+                />
+              </Reveal>
             ))}
           </div>
         </section>

@@ -54,13 +54,13 @@ export default function QuoteForm() {
   };
 
   const inputClass =
-    "mt-1.5 w-full border border-line bg-paper px-4 py-3 text-sm text-ink placeholder:text-graphite/60 focus:border-ink focus:outline-none";
+    "mt-1.5 w-full border border-line bg-paper px-4 py-3 text-sm text-ink placeholder:text-steel-mid/60 focus:border-ink focus:outline-none";
 
   return (
     <form onSubmit={handleSubmit} className="space-y-8">
       <div className="grid gap-6 sm:grid-cols-2">
         <label className="block">
-          <span className="font-mono text-xs uppercase tracking-widest text-graphite">
+          <span className="text-xs font-medium text-steel-mid">
             Nombre *
           </span>
           <input
@@ -73,7 +73,7 @@ export default function QuoteForm() {
         </label>
 
         <label className="block">
-          <span className="font-mono text-xs uppercase tracking-widest text-graphite">
+          <span className="text-xs font-medium text-steel-mid">
             Tipo de cliente
           </span>
           <select
@@ -90,7 +90,7 @@ export default function QuoteForm() {
         </label>
 
         <label className="block">
-          <span className="font-mono text-xs uppercase tracking-widest text-graphite">
+          <span className="text-xs font-medium text-steel-mid">
             Servicio de interés
           </span>
           <select
@@ -107,7 +107,7 @@ export default function QuoteForm() {
         </label>
 
         <label className="block">
-          <span className="font-mono text-xs uppercase tracking-widest text-graphite">
+          <span className="text-xs font-medium text-steel-mid">
             Plazo
           </span>
           <select
@@ -125,7 +125,7 @@ export default function QuoteForm() {
       </div>
 
       <label className="block">
-        <span className="font-mono text-xs uppercase tracking-widest text-graphite">
+        <span className="text-xs font-medium text-steel-mid">
           Cuéntanos tu proyecto *
         </span>
         <textarea
@@ -139,7 +139,7 @@ export default function QuoteForm() {
       </label>
 
       <div>
-        <span className="font-mono text-xs uppercase tracking-widest text-graphite">
+        <span className="text-xs font-medium text-steel-mid">
           Archivos de referencia (PDF, DXF, DWG, imágenes)
         </span>
         <label className="mt-1.5 flex cursor-pointer flex-col items-center justify-center border border-dashed border-line bg-mist px-6 py-8 text-center transition-colors hover:border-orange">
@@ -153,7 +153,7 @@ export default function QuoteForm() {
           <span className="text-sm font-medium text-ink">
             Haz clic para seleccionar archivos
           </span>
-          <span className="mt-1 text-xs text-graphite">
+          <span className="mt-1 text-xs text-steel-mid">
             PDF, DXF, DWG o imágenes — puedes elegir varios
           </span>
         </label>
@@ -170,7 +170,7 @@ export default function QuoteForm() {
             ))}
           </ul>
         )}
-        <p className="mt-2 text-xs leading-relaxed text-graphite">
+        <p className="mt-2 text-xs leading-relaxed text-steel-mid">
           Por ahora, el envío final se hace por WhatsApp: al enviar este
           formulario se abre una conversación con tu resumen — ahí adjuntas
           los archivos directamente en el chat.
@@ -184,7 +184,7 @@ export default function QuoteForm() {
           onChange={(e) => setConsent(e.target.checked)}
           className="mt-1 h-4 w-4 shrink-0 accent-orange"
         />
-        <span className="text-xs leading-relaxed text-graphite">
+        <span className="text-xs leading-relaxed text-steel-mid">
           Acepto que Metaludik use estos datos para responder mi solicitud de
           cotización.
         </span>

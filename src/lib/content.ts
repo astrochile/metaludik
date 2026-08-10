@@ -98,6 +98,8 @@ export type Project = {
   location: string;
   cover: string;
   gallery: string[];
+  /** Fotos adicionales para el case study — usar null donde aún no hay foto (se muestra placeholder). */
+  images: (string | null)[];
   problem: string;
   process: string;
   result: string;
@@ -116,6 +118,7 @@ export const projects: Project[] = [
       "/images/proyectos/la-masa-madre-01.jpg",
       "/images/proyectos/la-masa-madre-02.jpg",
     ],
+    images: ["/images/proyectos/la-masa-madre-02.jpg", null, null],
     problem:
       "La panadería necesitaba un letrero circular retroiluminado que replicara con exactitud su tipografía manuscrita, visible tanto de día como de noche.",
     process:
@@ -132,6 +135,7 @@ export const projects: Project[] = [
     location: "Rancagua",
     cover: "/images/proyectos/clinica-omnia.jpg",
     gallery: ["/images/proyectos/clinica-omnia.jpg"],
+    images: [null, null, null],
     problem:
       "La clínica necesitaba un letrero de fachada de gran formato, retroiluminado, con la identidad completa de marca (isotipo + wordmark + slogan).",
     process:
@@ -147,6 +151,7 @@ export const projects: Project[] = [
     location: "Rancagua",
     cover: "/images/proyectos/licoreria-iturriaga.jpg",
     gallery: ["/images/proyectos/licoreria-iturriaga.jpg"],
+    images: [null, null, null],
     problem:
       "El local buscaba un logo de marca cortado en metal para instalar sobre un revestimiento de madera, como pieza central de la ambientación interior.",
     process:
@@ -162,6 +167,7 @@ export const projects: Project[] = [
     location: "Rancagua",
     cover: "/images/proyectos/liceo-bicentenario.jpg",
     gallery: ["/images/proyectos/liceo-bicentenario.jpg"],
+    images: [null, null, null],
     problem:
       "El colegio necesitaba su escudo institucional completo —tipografía, globo terráqueo, figuras y orla— reproducido con precisión en una sola pieza metálica.",
     process:
@@ -177,6 +183,7 @@ export const projects: Project[] = [
     location: "Rancagua",
     cover: "/images/proyectos/almacen-la-familia.jpg",
     gallery: ["/images/proyectos/almacen-la-familia.jpg"],
+    images: [null, null, null],
     problem:
       "El almacén necesitaba un soporte estructural resistente para instalar un letrero de gran formato con gráfica impresa en su fachada.",
     process:
@@ -193,6 +200,7 @@ export const projects: Project[] = [
     location: "Bucalemu, zona costera",
     cover: "/images/proyectos/porton-galvanizado.jpg",
     gallery: ["/images/proyectos/porton-galvanizado.jpg"],
+    images: [null, null, null],
     problem:
       "Un jardín infantil en la localidad costera de Bucalemu necesitaba rejas resistentes a la corrosión provocada por el ambiente salino de la zona.",
     process:
@@ -208,6 +216,7 @@ export const projects: Project[] = [
     location: "Rancagua",
     cover: "/images/proyectos/brasero-corraleros.jpg",
     gallery: ["/images/proyectos/brasero-corraleros.jpg"],
+    images: [null, null, null],
     problem:
       "Encargo personalizado de un brasero/fogón exterior con un diseño propio: herradura, jinete y texto de marca familiar.",
     process:
@@ -223,6 +232,7 @@ export const projects: Project[] = [
     location: "Rancagua",
     cover: "/images/proyectos/porton-listones.jpg",
     gallery: ["/images/proyectos/porton-listones.jpg"],
+    images: [null, null, null],
     problem:
       "Acceso vehicular que necesitaba un portón corredizo resistente, con buena ventilación visual hacia el exterior.",
     process:
@@ -238,6 +248,7 @@ export const projects: Project[] = [
     location: "Rancagua",
     cover: "/images/proyectos/parrilla-contreras.jpg",
     gallery: ["/images/proyectos/parrilla-contreras.jpg"],
+    images: [null, null, null],
     problem: "Encargo de una parrilla/asador a medida, personalizada con el apellido de la familia cortado en el cuerpo del equipo.",
     process:
       "Fabricación completa de la parrilla con cajón, parrilla regulable y corte plasma CNC del texto personalizado.",
@@ -247,12 +258,22 @@ export const projects: Project[] = [
 ];
 
 export const process_steps = [
-  { title: "Idea o necesidad", desc: "Escuchamos qué necesitas: un diseño, un archivo, una foto de referencia o solo una idea." },
-  { title: "Diseño y adaptación técnica", desc: "Adaptamos el diseño para que sea cortable y fabricable, manteniendo la fidelidad al original." },
-  { title: "Corte plasma CNC", desc: "Corte de precisión con máquina Forsun, mesa de 3 x 2 metros." },
-  { title: "Soldadura y armado", desc: "Soldadura calificada, uniones y refuerzos según el proyecto." },
-  { title: "Terminaciones", desc: "Pintado, tratamiento anticorrosivo u otra terminación según el uso final de la pieza." },
-  { title: "Instalación y montaje", desc: "Trabajo en terreno cuando el proyecto lo requiere, hasta la entrega final." },
+  {
+    title: "Cuéntanos la idea",
+    text: "Puede ser una fotografía, un dibujo, una referencia, medidas o simplemente una idea que tienes en la cabeza. No necesitas llegar con un plano técnico.",
+  },
+  {
+    title: "La diseñamos",
+    text: "Revisamos medidas, materiales y detalles para encontrar una solución que funcione bien y se pueda fabricar correctamente.",
+  },
+  {
+    title: "La fabricamos",
+    text: "Cortamos, soldamos, armamos y damos terminación a cada pieza en nuestro taller.",
+  },
+  {
+    title: "La hacemos realidad",
+    text: "Entregamos el proyecto terminado y, cuando corresponde, también realizamos su instalación.",
+  },
 ];
 
 export const faqs = [
