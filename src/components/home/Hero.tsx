@@ -61,8 +61,8 @@ export default function Hero() {
 
         <Reveal delay={0.16}>
           <p className="mt-6 max-w-xl text-balance text-lg leading-relaxed text-white/70">
-            Corte plasma CNC, soldadura calificada y fabricación a medida —
-            acompañamos tu proyecto desde la idea hasta la instalación en terreno.
+            Fabricación, corte plasma CNC, estructuras metálicas, soldadura y
+            proyectos a medida.
           </p>
         </Reveal>
 
@@ -72,14 +72,14 @@ export default function Hero() {
               href="/cotizar"
               className="inline-flex items-center gap-2 bg-orange px-6 py-3.5 text-sm font-semibold text-ink transition-colors hover:bg-white"
             >
-              Solicitar cotización
+              Cotizar proyecto
             </Link>
             <Link
-              href="/proyectos"
+              href="#proyectos"
               data-cursor="Ver"
               className="inline-flex items-center gap-2 border border-white/25 px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:border-white hover:bg-white/10"
             >
-              Ver proyectos reales
+              Ver proyectos
             </Link>
           </div>
         </Reveal>

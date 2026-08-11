@@ -30,6 +30,8 @@ export const services = [
     slug: "corte-plasma-cnc",
     title: "Corte Plasma CNC",
     short: "Piezas, logos, letras y diseños cortados desde archivo con máquina Forsun industrial.",
+    photo: "/images/proyectos/liceo-bicentenario.jpg",
+    photoAlt: "Corte plasma CNC de piezas metálicas en Metaludik",
     items: [
       "Corte de piezas y logos",
       "Letras corporativas",
@@ -42,6 +44,8 @@ export const services = [
     slug: "estructuras-fabricacion-metalica",
     title: "Estructuras y fabricación metálica",
     short: "Bastidores, soportes, portones y rejas fabricados a medida.",
+    photo: "/images/proyectos/porton-listones.jpg",
+    photoAlt: "Estructura metálica y portón fabricado por Metaludik",
     items: [
       "Estructuras metálicas",
       "Bastidores y soportes",
@@ -55,6 +59,8 @@ export const services = [
     slug: "soldadura-montajes",
     title: "Soldadura y montajes",
     short: "Soldadura calificada, armado y trabajo en terreno cuando el proyecto lo requiere.",
+    photo: "/images/proyectos/pieza-hexagonal.jpg",
+    photoAlt: "Taller de fabricación y soldadura de Metaludik en Rancagua",
     items: [
       "Soldadura calificada",
       "Armado y uniones",
@@ -67,6 +73,8 @@ export const services = [
     slug: "letreros-soluciones-comerciales",
     title: "Letreros y soluciones comerciales",
     short: "Letreros metálicos e iluminados, y estructuras para gráfica publicitaria.",
+    photo: "/images/proyectos/la-masa-madre-01.jpg",
+    photoAlt: "Letrero metálico corporativo iluminado fabricado por Metaludik",
     items: [
       "Letreros metálicos y logos corporativos",
       "Letreros luminosos",
@@ -79,6 +87,8 @@ export const services = [
     slug: "proyectos-personalizados-decoracion",
     title: "Proyectos personalizados y decoración",
     short: "Braseros, parrillas, pasamanos y objetos con nombre — ideas hechas a medida.",
+    photo: "/images/proyectos/brasero-corraleros.jpg",
+    photoAlt: "Brasero metálico personalizado fabricado por Metaludik",
     items: [
       "Braseros y fogones",
       "Parrillas y asadores",
@@ -95,7 +105,10 @@ export type Project = {
   title: string;
   client: string;
   category: string;
+  filterKey: "corte-cnc" | "estructuras" | "soldadura" | "letreros" | "personalizados";
   location: string;
+  alt: string;
+  blurb: string;
   cover: string;
   gallery: string[];
   /** Fotos adicionales para el case study — usar null donde aún no hay foto (se muestra placeholder). */
@@ -112,7 +125,10 @@ export const projects: Project[] = [
     title: "Letrero iluminado La Masa Madre",
     client: "La Masa Madre",
     category: "Letreros y soluciones comerciales",
+    filterKey: "letreros",
     location: "Rancagua",
+    alt: "Letrero metálico iluminado La Masa Madre fabricado por Metaludik en Rancagua",
+    blurb: "Letrero circular retroiluminado con tipografía de marca cortada en metal.",
     cover: "/images/proyectos/la-masa-madre-01.jpg",
     gallery: [
       "/images/proyectos/la-masa-madre-01.jpg",
@@ -132,7 +148,10 @@ export const projects: Project[] = [
     title: "Letrero corporativo Clínica Dental Omnia",
     client: "Clínica Dental Omnia",
     category: "Letreros y soluciones comerciales",
+    filterKey: "letreros",
     location: "Rancagua",
+    alt: "Letrero corporativo metálico de Clínica Dental Omnia instalado en fachada",
+    blurb: "Letrero de fachada de gran formato con iluminación integrada.",
     cover: "/images/proyectos/clinica-omnia.jpg",
     gallery: ["/images/proyectos/clinica-omnia.jpg"],
     images: [null, null, null],
@@ -148,7 +167,10 @@ export const projects: Project[] = [
     title: "Logo corporativo Licorería Iturriaga",
     client: "Licorería Iturriaga",
     category: "Letreros y soluciones comerciales",
+    filterKey: "letreros",
     location: "Rancagua",
+    alt: "Logo metálico corporativo de Licorería Iturriaga cortado en acero",
+    blurb: "Logo de marca cortado en metal, montado sobre soporte de madera.",
     cover: "/images/proyectos/licoreria-iturriaga.jpg",
     gallery: ["/images/proyectos/licoreria-iturriaga.jpg"],
     images: [null, null, null],
@@ -164,7 +186,10 @@ export const projects: Project[] = [
     title: "Escudo institucional Liceo Bicentenario Oscar Castro Z.",
     client: "Liceo Bicentenario Oscar Castro Z.",
     category: "Corte Plasma CNC",
+    filterKey: "corte-cnc",
     location: "Rancagua",
+    alt: "Escudo institucional cortado con plasma CNC para el Liceo Bicentenario Oscar Castro Z.",
+    blurb: "Escudo institucional de precisión cortado en una sola pieza de acero.",
     cover: "/images/proyectos/liceo-bicentenario.jpg",
     gallery: ["/images/proyectos/liceo-bicentenario.jpg"],
     images: [null, null, null],
@@ -180,7 +205,10 @@ export const projects: Project[] = [
     title: "Estructura y bastidor publicitario Almacén La Familia",
     client: "Almacén La Familia",
     category: "Estructuras y fabricación metálica",
+    filterKey: "estructuras",
     location: "Rancagua",
+    alt: "Estructura y bastidor metálico fabricado por Metaludik para Almacén La Familia",
+    blurb: "Estructura y bastidor para soporte de gráfica publicitaria en fachada.",
     cover: "/images/proyectos/almacen-la-familia.jpg",
     gallery: ["/images/proyectos/almacen-la-familia.jpg"],
     images: [null, null, null],
@@ -197,7 +225,10 @@ export const projects: Project[] = [
     title: "Rejas galvanizadas — Jardín Infantil de Bucalemu",
     client: "Jardín infantil, Bucalemu",
     category: "Estructuras y fabricación metálica",
+    filterKey: "estructuras",
     location: "Bucalemu, zona costera",
+    alt: "Rejas metálicas galvanizadas fabricadas para un jardín infantil en Bucalemu",
+    blurb: "Rejas galvanizadas resistentes a la corrosión de la zona costera.",
     cover: "/images/proyectos/porton-galvanizado.jpg",
     gallery: ["/images/proyectos/porton-galvanizado.jpg"],
     images: [null, null, null],
@@ -213,7 +244,10 @@ export const projects: Project[] = [
     title: "Brasero personalizado \"Somos Corraleros\"",
     client: "Proyecto familiar",
     category: "Proyectos personalizados y decoración",
+    filterKey: "personalizados",
     location: "Rancagua",
+    alt: "Brasero metálico personalizado con diseño cortado en plasma CNC",
+    blurb: "Brasero a medida con diseño y texto personalizado cortado en metal.",
     cover: "/images/proyectos/brasero-corraleros.jpg",
     gallery: ["/images/proyectos/brasero-corraleros.jpg"],
     images: [null, null, null],
@@ -229,7 +263,10 @@ export const projects: Project[] = [
     title: "Portón corredizo de listones",
     client: "Proyecto residencial",
     category: "Estructuras y fabricación metálica",
+    filterKey: "estructuras",
     location: "Rancagua",
+    alt: "Portón corredizo de listones metálicos fabricado por Metaludik",
+    blurb: "Estructura metálica corrediza para acceso vehicular residencial.",
     cover: "/images/proyectos/porton-listones.jpg",
     gallery: ["/images/proyectos/porton-listones.jpg"],
     images: [null, null, null],
@@ -245,7 +282,10 @@ export const projects: Project[] = [
     title: "Parrilla personalizada Familia Contreras Rey",
     client: "Proyecto familiar",
     category: "Proyectos personalizados y decoración",
+    filterKey: "personalizados",
     location: "Rancagua",
+    alt: "Parrilla metálica personalizada con apellido de familia cortado en el cuerpo",
+    blurb: "Parrilla a medida personalizada con el apellido de la familia.",
     cover: "/images/proyectos/parrilla-contreras.jpg",
     gallery: ["/images/proyectos/parrilla-contreras.jpg"],
     images: [null, null, null],
@@ -257,22 +297,31 @@ export const projects: Project[] = [
   },
 ];
 
+export const project_filters = [
+  { key: "todos", label: "Todos" },
+  { key: "corte-cnc", label: "Corte CNC" },
+  { key: "estructuras", label: "Estructuras" },
+  { key: "soldadura", label: "Soldadura / Montaje" },
+  { key: "letreros", label: "Letreros" },
+  { key: "personalizados", label: "Personalizados" },
+] as const;
+
 export const process_steps = [
   {
-    title: "Cuéntanos la idea",
-    text: "Puede ser una fotografía, un dibujo, una referencia, medidas o simplemente una idea que tienes en la cabeza. No necesitas llegar con un plano técnico.",
+    title: "Conversamos",
+    text: "Cuéntanos qué necesitas: una fotografía, un dibujo, una referencia o simplemente una idea.",
   },
   {
-    title: "La diseñamos",
-    text: "Revisamos medidas, materiales y detalles para encontrar una solución que funcione bien y se pueda fabricar correctamente.",
+    title: "Diseñamos",
+    text: "Convertimos la idea en una solución fabricable, definiendo materiales y medidas.",
   },
   {
-    title: "La fabricamos",
-    text: "Cortamos, soldamos, armamos y damos terminación a cada pieza en nuestro taller.",
+    title: "Fabricamos",
+    text: "Cortamos, soldamos y damos terminación a cada pieza en nuestro taller.",
   },
   {
-    title: "La hacemos realidad",
-    text: "Entregamos el proyecto terminado y, cuando corresponde, también realizamos su instalación.",
+    title: "Instalamos",
+    text: "Llevamos el proyecto a su lugar y realizamos el montaje cuando corresponde.",
   },
 ];
 

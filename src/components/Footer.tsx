@@ -21,9 +21,59 @@ export default function Footer() {
               </span>
             </div>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-white/50">
-              {brand.tagline}. Corte plasma CNC, soldadura calificada y
-              fabricación metálica a medida en {brand.city}.
+              {brand.tagline}. Fabricación metálica, corte plasma CNC,
+              estructuras metálicas, soldadura, letreros y proyectos
+              personalizados en {brand.city}.
             </p>
+            <p className="mt-3 text-sm text-white/40">
+              Samik Garrido — fundador
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-sm font-semibold text-orange">Navegación</h3>
+            <ul className="mt-4 space-y-2.5">
+              <li>
+                <Link href="/" className="text-sm text-white/65 hover:text-white">
+                  Inicio
+                </Link>
+              </li>
+              <li>
+                <Link href="/#servicios" className="text-sm text-white/65 hover:text-white">
+                  Servicios
+                </Link>
+              </li>
+              <li>
+                <Link href="/#proyectos" className="text-sm text-white/65 hover:text-white">
+                  Proyectos
+                </Link>
+              </li>
+              <li>
+                <Link href="/#proceso" className="text-sm text-white/65 hover:text-white">
+                  Proceso
+                </Link>
+              </li>
+              <li>
+                <Link href="/#nosotros" className="text-sm text-white/65 hover:text-white">
+                  Nosotros
+                </Link>
+              </li>
+              <li>
+                <Link href="/#contacto" className="text-sm text-white/65 hover:text-white">
+                  Contacto
+                </Link>
+              </li>
+              <li>
+                <a
+                  href={brand.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-white/65 hover:text-white"
+                >
+                  Instagram
+                </a>
+              </li>
+            </ul>
           </div>
 
           <div>
@@ -39,37 +89,6 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-semibold text-orange">Empresa</h3>
-            <ul className="mt-4 space-y-2.5">
-              <li>
-                <Link href="/nosotros" className="text-sm text-white/65 hover:text-white">
-                  Nosotros
-                </Link>
-              </li>
-              <li>
-                <Link href="/proyectos" className="text-sm text-white/65 hover:text-white">
-                  Proyectos
-                </Link>
-              </li>
-              <li>
-                <Link href="/cotizar" className="text-sm text-white/65 hover:text-white">
-                  Cotizar
-                </Link>
-              </li>
-              <li>
-                <a
-                  href={brand.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-white/65 hover:text-white"
-                >
-                  Instagram
-                </a>
-              </li>
             </ul>
           </div>
 

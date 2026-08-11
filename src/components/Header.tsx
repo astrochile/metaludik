@@ -5,10 +5,11 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const NAV = [
-  { href: "/nosotros", label: "Nosotros" },
-  { href: "/servicios", label: "Servicios" },
-  { href: "/proyectos", label: "Proyectos" },
-  { href: "/contacto", label: "Contacto" },
+  { href: "/#servicios", label: "Servicios" },
+  { href: "/#proyectos", label: "Proyectos" },
+  { href: "/#proceso", label: "Proceso" },
+  { href: "/#nosotros", label: "Nosotros" },
+  { href: "/#contacto", label: "Contacto" },
 ];
 
 export default function Header() {

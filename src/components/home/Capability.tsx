@@ -1,3 +1,5 @@
+import Image from "next/image";
+import SectionHeading from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
 
 const SPECS = [
@@ -11,28 +13,39 @@ const SPECS = [
 
 export default function Capability() {
   return (
-    <section className="metal-texture-dark border-t border-white/10 bg-graphite py-20 text-white sm:py-28">
+    <section id="capacidad" className="metal-texture-dark scroll-mt-20 border-t border-white/10 bg-graphite py-20 text-white sm:py-28">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <Reveal>
-          <div className="max-w-2xl">
-            <span className="text-sm font-semibold text-orange">Capacidad y equipamiento</span>
-            <h2 className="mt-3 text-balance font-display text-4xl font-extrabold leading-[1.02] sm:text-5xl">
-              Máquina industrial, criterio de taller
-            </h2>
-          </div>
-        </Reveal>
+        <SectionHeading
+          number="05"
+          eyebrow="Capacidad"
+          title="Tenemos la tecnología para hacerlo"
+          dark
+        />
 
-        <div className="mt-12 grid gap-px overflow-hidden bg-white/10 sm:grid-cols-2 lg:grid-cols-3">
-          {SPECS.map((spec, i) => (
-            <Reveal key={spec.label} delay={i * 0.05} y={12}>
-              <div className="h-full bg-graphite p-6">
-                <p className="text-xs font-medium text-white/45">{spec.label}</p>
-                <p className="mt-2 font-display text-xl font-bold text-white">
-                  {spec.value}
-                </p>
-              </div>
-            </Reveal>
-          ))}
+        <div className="mt-12 grid gap-8 lg:grid-cols-12">
+          <Reveal className="lg:col-span-5">
+            <div className="relative aspect-[4/5] w-full overflow-hidden">
+              <Image
+                src="/images/proyectos/pieza-hexagonal.jpg"
+                alt="Taller de fabricación metálica de Metaludik con máquina de corte plasma CNC"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </Reveal>
+
+          <div className="grid grid-cols-1 gap-px overflow-hidden bg-white/10 sm:grid-cols-2 lg:col-span-7">
+            {SPECS.map((spec, i) => (
+              <Reveal key={spec.label} delay={i * 0.05} y={12}>
+                <div className="h-full bg-graphite p-6">
+                  <p className="text-xs font-medium text-white/45">{spec.label}</p>
+                  <p className="mt-2 font-display text-xl font-bold text-white">
+                    {spec.value}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </div>
     </section>

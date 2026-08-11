@@ -36,6 +36,10 @@ body {
   cursor: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @media (pointer: coarse) {
   body {
     cursor: auto;

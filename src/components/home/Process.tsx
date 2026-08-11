@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import SectionHeading from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
 import { IconBrief, IconDesign, IconCut, IconInstall } from "@/components/ProcessIcons";
 import { process_steps } from "@/lib/content";
@@ -15,45 +16,51 @@ export default function Process() {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setActive(true);
-          obs.disconnect();
-        }
-      },
-      { threshold: 0.35 }
-    );
+    let done = false;
+    const check = () => {
+      if (done) return;
+      const rect = el.getBoundingClientRect();
+      const viewH = window.innerHeight || document.documentElement.clientHeight;
+      if (rect.top < viewH * 0.85 && rect.bottom > 0) {
+        done = true;
+        setActive(true);
+        cleanup();
+      }
+    };
+    const obs = new IntersectionObserver((entries) => {
+      if (entries[0]?.isIntersecting) check();
+    }, { threshold: 0.01 });
     obs.observe(el);
-    return () => obs.disconnect();
+    window.addEventListener("scroll", check, { passive: true });
+    window.addEventListener("resize", check, { passive: true });
+    check();
+    function cleanup() {
+      obs.disconnect();
+      window.removeEventListener("scroll", check);
+      window.removeEventListener("resize", check);
+    }
+    return cleanup;
   }, []);
 
   return (
-    <section className="bg-ink py-24 text-white sm:py-32">
+    <section id="proceso" className="scroll-mt-20 bg-ink py-24 text-white sm:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <Reveal>
-          <span className="text-sm font-semibold text-orange">Cómo trabajamos</span>
-          <h2 className="mt-3 max-w-2xl text-balance font-display text-4xl font-extrabold leading-[1.02] sm:text-5xl">
-            De una idea a algo real
-          </h2>
-          <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-white/60">
-            Cada proyecto es distinto, pero hay algo que se repite: escuchamos,
-            pensamos la solución y la fabricamos.
-          </p>
-        </Reveal>
+        <SectionHeading
+          number="04"
+          eyebrow="Cómo trabajamos"
+          title="Así convertimos una idea en metal"
+          lede="Cada proyecto es distinto, pero hay algo que se repite: escuchamos, pensamos la solución y la fabricamos."
+          dark
+        />
 
         <div ref={ref} className="relative mt-20">
-          {/* línea CNC — horizontal en desktop, vertical en mobile */}
           <div className="absolute left-[27px] top-0 hidden h-full w-px bg-white/10 md:left-0 md:top-[27px] md:block md:h-px md:w-full">
             <div
               className="h-full bg-orange transition-[width] duration-[1400ms] ease-[cubic-bezier(0.65,0,0.35,1)] md:h-px"
               style={{ width: active ? "100%" : "0%" }}
             />
           </div>
-          <div
-            className="absolute left-[27px] top-0 block h-full w-px bg-white/10 md:hidden"
-            aria-hidden
-          >
+          <div className="absolute left-[27px] top-0 block h-full w-px bg-white/10 md:hidden" aria-hidden>
             <div
               className="w-px bg-orange transition-[height] duration-[1400ms] ease-[cubic-bezier(0.65,0,0.35,1)]"
               style={{ height: active ? "100%" : "0%" }}

@@ -1,28 +1,24 @@
 import Image from "next/image";
+import Link from "next/link";
+import SectionHeading from "@/components/SectionHeading";
 import { Reveal, RevealMask, Counter } from "@/components/Reveal";
 import { stats } from "@/lib/content";
 
 export default function About() {
   return (
-    <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28">
+    <section id="nosotros" className="scroll-mt-20 mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28">
       <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
         <div className="lg:col-span-5">
-          <Reveal>
-            <span className="text-sm font-semibold text-orange">Quiénes somos</span>
-            <h2 className="mt-3 text-balance font-display text-4xl font-extrabold leading-[1.02] text-ink sm:text-5xl">
-              Metal + lúdico
-              <span className="block text-orange">= Metaludik</span>
-            </h2>
-          </Reveal>
+          <SectionHeading number="06" eyebrow="Nosotros" title="El oficio detrás de Metaludik" />
 
           <Reveal delay={0.1}>
             <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-ink/70">
               <p>
-                Samik Garrido lleva <strong className="text-ink">15 años en el oficio de la soldadura</strong>,
-                formado principalmente en el rubro minero, en procesos de extracción
-                de cobre. Hace 3 años decidió abrir su propio taller y buscó un
-                nombre que no lo encasillara solo en la metalmecánica tradicional:
-                así nació <strong className="text-ink">Metaludik</strong> — metal, con un
+                <strong className="text-ink">Samik Garrido</strong> lleva 15 años
+                en el oficio de la soldadura, formado principalmente en el rubro
+                minero, en procesos de extracción de cobre. Hace 3 años decidió
+                abrir su propio taller: así nació{" "}
+                <strong className="text-ink">Metaludik</strong> — metal, con un
                 toque más lúdico, cercano y creativo.
               </p>
               <p>
@@ -44,6 +40,15 @@ export default function About() {
               </cite>
             </blockquote>
           </Reveal>
+
+          <Reveal delay={0.2}>
+            <Link
+              href="/nosotros"
+              className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-orange hover:underline"
+            >
+              Conoce nuestra historia completa →
+            </Link>
+          </Reveal>
         </div>
 
         <div className="lg:col-span-7">
@@ -51,7 +56,7 @@ export default function About() {
             <div className="relative h-full w-full">
               <Image
                 src="/images/proyectos/pasamanos.jpg"
-                alt="Terminación de pasamanos fabricado por Metaludik"
+                alt="Samik Garrido — terminación de pasamanos metálico fabricado por Metaludik"
                 fill
                 className="object-cover"
               />

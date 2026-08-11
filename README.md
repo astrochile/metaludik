@@ -1,13 +1,40 @@
-# Metaludik — Sitio web
+# Metaludik — Landing page one-page
 
 Next.js 14 (App Router) + TypeScript + Tailwind CSS v4 + Framer Motion.
 Contenido 100% real, confirmado por Samik Garrido (ver `src/lib/content.ts`).
 
+**La experiencia principal es una landing de una sola página** (`/`), con 8
+secciones numeradas que cuentan la historia completa: Hero → Servicios →
+Proyectos (con filtros y lightbox) → Proceso → Capacidad → Nosotros →
+Testimonios → Cotización. Las páginas internas (`/servicios`, `/proyectos`,
+`/nosotros`, `/cotizar`, `/contacto`) se mantienen activas para SEO y
+navegación profunda, pero ya no son el recorrido principal.
+
 Sistema visual: industrial/CNC — negro profundo, grafito, acero, blanco
 grisáceo y naranja de marca como acento. Tipografía Archivo (títulos) +
-Manrope (texto). Cursor personalizado en desktop, animaciones de revelado al
-hacer scroll, y un proceso de 4 etapas con íconos propios inspirados en el
-oficio (no iconografía genérica).
+Manrope (texto). Cursor personalizado en desktop.
+
+## Novedades de esta versión
+
+- **Galería de proyectos filtrable** (`src/components/ProjectsGallery.tsx`):
+  filtros por categoría (Todos / Corte CNC / Estructuras / Soldadura-Montaje
+  / Letreros / Personalizados) sin recargar la página, con animación de
+  grid y un lightbox modal al hacer clic en cualquier proyecto. Hoy muestra
+  los 9 proyectos reales confirmados — está listo para escalar a más sin
+  tocar el layout, agregando entradas nuevas en `content.ts`.
+- **Sección de Servicios con foto real por categoría** en vez de solo texto.
+- **Sección de Testimonios / Google Reviews** (`src/components/home/Testimonials.tsx`):
+  estructura preparada para conectar el widget real de Google Reviews.
+  Mientras no exista, muestra un estado "próximamente" — no hay
+  testimonios inventados.
+- **SEO técnico reforzado**: datos estructurados JSON-LD (`LocalBusiness`)
+  en `layout.tsx`, imagen Open Graph real (`public/og-image.jpg`), meta
+  title/description/keywords orientados a "Metaludik" + "Samik Garrido" +
+  fabricación metálica + corte plasma CNC + Rancagua, alt text descriptivo
+  en cada imagen de proyecto (nunca "imagen1.jpg").
+- **Navegación por anclas con scroll suave**: el header y el footer ahora
+  apuntan a las secciones de la landing (`/#servicios`, `/#proyectos`,
+  `/#proceso`, `/#nosotros`, `/#contacto`).
 
 ## Cómo subirlo a Vercel
 
