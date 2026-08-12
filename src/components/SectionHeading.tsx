@@ -22,14 +22,11 @@ export default function SectionHeading({
       <div
         className={`flex items-center gap-3 ${align === "center" ? "justify-center" : ""}`}
       >
-        <span
-          className={`font-display text-sm font-bold ${dark ? "text-orange" : "text-orange"}`}
-        >
+        <span className={`font-display text-sm font-bold ${dark ? "text-white/50" : "text-steel-mid"}`}>
           {number}
         </span>
-        <span className={`h-px w-8 ${dark ? "bg-white/25" : "bg-steel-mid/40"}`} />
         {eyebrow && (
-          <span className={`text-sm font-semibold ${dark ? "text-white/60" : "text-steel-mid"}`}>
+          <span className="inline-flex items-center bg-orange px-3.5 py-1.5 text-sm font-bold text-ink">
             {eyebrow}
           </span>
         )}

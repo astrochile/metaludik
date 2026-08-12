@@ -23,11 +23,11 @@ export default function NosotrosPage() {
         {/* 01 — Hero */}
         <section className="relative flex h-[86vh] min-h-[560px] w-full items-end overflow-hidden bg-ink">
           <Image
-            src="/images/proyectos/pieza-hexagonal.jpg"
-            alt="Taller de Metaludik"
+            src="/images/proyectos/samik-soldando.jpg"
+            alt="Samik Garrido soldando en el taller de Metaludik en Rancagua"
             fill
             priority
-            className="object-cover opacity-50"
+            className="object-cover object-top opacity-60"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/60 to-ink/30" />
           <div className="relative mx-auto w-full max-w-7xl px-5 pb-16 sm:px-8 sm:pb-24">
@@ -57,8 +57,8 @@ export default function NosotrosPage() {
             <RevealMask className="lg:col-span-7 aspect-[4/3]">
               <div className="relative h-full w-full">
                 <Image
-                  src="/images/proyectos/parrilla-contreras.jpg"
-                  alt="Trabajo en el taller de Metaludik"
+                  src="/images/proyectos/maquina-cnc.jpg"
+                  alt="Máquina de corte plasma CNC del taller Metaludik en Rancagua"
                   fill
                   className="object-cover"
                 />
@@ -138,10 +138,24 @@ export default function NosotrosPage() {
 
             <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4">
               <RevealMask className="col-span-2 aspect-[16/9] sm:col-span-2">
-                <ImagePlaceholder index={1} label="Samik trabajando con CNC" />
+                <div className="relative h-full w-full">
+                  <Image
+                    src="/images/proyectos/samik-soldando.jpg"
+                    alt="Samik Garrido soldando una reja metálica en Metaludik"
+                    fill
+                    className="object-cover object-top"
+                  />
+                </div>
               </RevealMask>
               <RevealMask className="aspect-square" delay={0.05}>
-                <ImagePlaceholder index={2} label="Soldadura, chispas" />
+                <div className="relative h-full w-full">
+                  <Image
+                    src="/images/proyectos/maquina-cnc.jpg"
+                    alt="Máquina de corte plasma CNC industrial de Metaludik"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
               </RevealMask>
               <RevealMask className="aspect-square" delay={0.1}>
                 <ImagePlaceholder index={3} label="Manos trabajando el metal" />
@@ -244,8 +258,17 @@ export default function NosotrosPage() {
 
             <div className="mt-12 grid gap-6 sm:grid-cols-2">
               <Reveal>
-                <div className="aspect-[4/5] w-full">
-                  <ImagePlaceholder index={1} label="Samik Garrido — Fundador" />
+                <div className="relative aspect-[4/5] w-full overflow-hidden">
+                  <Image
+                    src="/images/proyectos/samik-soldando.jpg"
+                    alt="Samik Garrido, fundador de Metaludik, soldando en el taller"
+                    fill
+                    className="object-cover object-top"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/85 to-transparent p-4">
+                    <p className="text-sm font-semibold text-white">Samik Garrido</p>
+                    <p className="text-xs text-white/70">Fundador</p>
+                  </div>
                 </div>
               </Reveal>
               <Reveal delay={0.08}>

@@ -55,8 +55,8 @@ export default function About() {
           <RevealMask className="aspect-[4/3] w-full">
             <div className="relative h-full w-full">
               <Image
-                src="/images/proyectos/pasamanos.jpg"
-                alt="Samik Garrido — terminación de pasamanos metálico fabricado por Metaludik"
+                src="/images/proyectos/samik-soldando.jpg"
+                alt="Samik Garrido soldando una reja metálica en el taller de Metaludik"
                 fill
                 className="object-cover"
               />

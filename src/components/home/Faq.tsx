@@ -6,7 +6,7 @@ export default function Faq() {
     <section className="border-t border-line bg-paper-dim py-20 sm:py-28">
       <div className="mx-auto max-w-4xl px-5 sm:px-8">
         <Reveal>
-          <span className="text-sm font-semibold text-orange">Preguntas frecuentes</span>
+          <span className="inline-flex items-center bg-orange px-3.5 py-1.5 text-sm font-bold text-ink">Preguntas frecuentes</span>
           <h2 className="mt-3 text-balance font-display text-4xl font-extrabold leading-[1.02] text-ink sm:text-5xl">
             Antes de escribirnos
           </h2>

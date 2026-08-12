@@ -4,38 +4,25 @@ import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
 
-// Cuando exista el video real de la máquina CNC cortando, se sube a
-// /public/video/cnc-hero.mp4 y se descomenta el <video> más abajo.
-const HERO_VIDEO_SRC: string | null = null;
-const HERO_POSTER = "/images/proyectos/pieza-hexagonal.jpg";
+const HERO_VIDEO_SRC = "/video/cnc-hero.mp4";
+const HERO_POSTER = "/images/brand/hero-poster.jpg";
 
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-ink">
       <div className="absolute inset-0">
-        {HERO_VIDEO_SRC ? (
-          <video
-            className="h-full w-full object-cover opacity-55"
-            autoPlay
-            muted
-            loop
-            playsInline
-            poster={HERO_POSTER}
-          >
-            <source src={HERO_VIDEO_SRC} type="video/mp4" />
-          </video>
-        ) : (
-          <Image
-            src={HERO_POSTER}
-            alt=""
-            fill
-            priority
-            className="object-cover opacity-55"
-          />
-        )}
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/75 to-ink/40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink/95 via-ink/50 to-transparent" />
-        <div className="metal-texture-dark absolute inset-0 opacity-60" />
+        <video
+          className="h-full w-full object-cover opacity-40"
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster={HERO_POSTER}
+        >
+          <source src={HERO_VIDEO_SRC} type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-ink/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink/95 via-ink/45 to-transparent" />
       </div>
 
       {/* línea técnica vertical, referencia editorial */}
@@ -44,12 +31,12 @@ export default function Hero() {
       <div className="relative mx-auto flex min-h-[92vh] max-w-7xl flex-col justify-end px-5 pb-16 pt-36 sm:px-8 sm:pb-24">
         <Reveal>
           <Image
-            src="/images/brand/logo-full-negative.png"
-            alt="Metaludik"
-            width={640}
-            height={490}
+            src="/images/brand/logo-horizontal.png"
+            alt="Metaludik — fabricación metálica y corte plasma CNC en Rancagua"
+            width={2718}
+            height={473}
             priority
-            className="mb-8 h-auto w-[190px] sm:w-[230px] lg:w-[260px]"
+            className="mb-8 h-auto w-[240px] sm:w-[300px] lg:w-[360px]"
           />
         </Reveal>
 

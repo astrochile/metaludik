@@ -26,25 +26,48 @@ export default function Capability() {
           <Reveal className="lg:col-span-5">
             <div className="relative aspect-[4/5] w-full overflow-hidden">
               <Image
-                src="/images/proyectos/pieza-hexagonal.jpg"
-                alt="Taller de fabricación metálica de Metaludik con máquina de corte plasma CNC"
+                src="/images/proyectos/maquina-cnc.jpg"
+                alt="Máquina de corte plasma CNC Forsun del taller Metaludik en Rancagua"
                 fill
                 className="object-cover"
               />
             </div>
           </Reveal>
 
-          <div className="grid grid-cols-1 gap-px overflow-hidden bg-white/10 sm:grid-cols-2 lg:col-span-7">
-            {SPECS.map((spec, i) => (
-              <Reveal key={spec.label} delay={i * 0.05} y={12}>
-                <div className="h-full bg-graphite p-6">
-                  <p className="text-xs font-medium text-white/45">{spec.label}</p>
-                  <p className="mt-2 font-display text-xl font-bold text-white">
-                    {spec.value}
+          <div className="lg:col-span-7">
+            <div className="grid grid-cols-1 gap-px overflow-hidden bg-white/10 sm:grid-cols-2">
+              {SPECS.map((spec, i) => (
+                <Reveal key={spec.label} delay={i * 0.05} y={12}>
+                  <div className="h-full bg-graphite p-6">
+                    <p className="text-xs font-medium text-white/45">{spec.label}</p>
+                    <p className="mt-2 font-display text-xl font-bold text-white">
+                      {spec.value}
+                    </p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+
+            <Reveal delay={0.3}>
+              <div className="mt-6 flex flex-col items-start gap-4 border border-white/10 bg-white/5 p-6 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <p className="font-display text-lg font-bold text-white">
+                    Dossier técnico de corte plasma CNC
+                  </p>
+                  <p className="mt-1 text-sm text-white/55">
+                    Más detalles sobre el proceso y la tecnología, en PDF.
                   </p>
                 </div>
-              </Reveal>
-            ))}
+                <a
+                  href="/docs/metaludik-dossier-corte-cnc.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="shrink-0 inline-flex items-center gap-2 bg-orange px-5 py-3 text-sm font-semibold text-ink transition-colors hover:bg-white"
+                >
+                  Ver dossier
+                </a>
+              </div>
+            </Reveal>
           </div>
         </div>
       </div>

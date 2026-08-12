@@ -29,18 +29,15 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3.5 sm:px-8">
-        <Link href="/" className="flex items-center gap-2.5 shrink-0" data-cursor="">
+        <Link href="/" className="flex items-center shrink-0" data-cursor="">
           <Image
-            src="/images/brand/icon-negative.png"
-            alt="Metaludik"
-            width={34}
-            height={34}
-            className="h-8 w-8"
+            src="/images/brand/logo-horizontal.png"
+            alt="Metaludik — fabricación metálica y corte plasma CNC"
+            width={800}
+            height={139}
             priority
+            className="h-8 w-auto sm:h-9"
           />
-          <span className="font-display text-lg font-extrabold tracking-tight text-white">
-            METALUDIK
-          </span>
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">

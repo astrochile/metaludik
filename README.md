@@ -36,6 +36,28 @@ Manrope (texto). Cursor personalizado en desktop.
   apuntan a las secciones de la landing (`/#servicios`, `/#proyectos`,
   `/#proceso`, `/#nosotros`, `/#contacto`).
 
+## Novedades de esta versión (v4 — assets reales)
+
+- **Logo real** en Header y Footer (`public/images/brand/logo-horizontal.png` /
+  `.svg`), extraído del archivo de marca entregado.
+- **Video real del Hero**: `public/video/cnc-hero.mp4` — comprimido a 1080p
+  sin audio (~8.7 MB) desde el video original entregado, con
+  `autoplay/muted/loop/playsInline` y poster de respaldo
+  (`public/images/brand/hero-poster.jpg`, extraído del propio video).
+- **Títulos con badge naranja**: el eyebrow de cada sección (Home y páginas
+  internas) ahora es una píldora naranja sólida, no texto con tracking.
+- **Cursor con estela de chispa**: el cursor personalizado en desktop genera
+  partículas tipo chispa de corte plasma al moverse (blanco → naranja, con
+  gravedad leve), usando un canvas superpuesto — se apaga solo en touch.
+- **Foto real de Samik Garrido** soldando, integrada en: la sección
+  "Nosotros" del home, el Hero de `/nosotros`, la presentación en primera
+  persona, la galería del taller y la sección de equipo.
+- **Foto real de la máquina de corte plasma CNC**, integrada en la sección
+  "Capacidad" (reemplaza la imagen genérica anterior).
+- **Dossier técnico descargable**: `public/docs/metaludik-dossier-corte-cnc.pdf`
+  (comprimido de 37 MB a 1.2 MB), con botón "Ver dossier" en la sección de
+  Capacidad.
+
 ## Cómo subirlo a Vercel
 
 ### 1. Subir el proyecto a GitHub

@@ -8,18 +8,13 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <div className="flex items-center gap-2.5">
-              <Image
-                src="/images/brand/icon-negative.png"
-                alt="Metaludik"
-                width={30}
-                height={30}
-                className="h-7 w-7"
-              />
-              <span className="font-display text-lg font-extrabold tracking-tight">
-                METALUDIK
-              </span>
-            </div>
+            <Image
+              src="/images/brand/logo-horizontal.png"
+              alt="Metaludik — fabricación metálica y corte plasma CNC"
+              width={2718}
+              height={473}
+              className="h-7 w-auto"
+            />
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-white/50">
               {brand.tagline}. Fabricación metálica, corte plasma CNC,
               estructuras metálicas, soldadura, letreros y proyectos
