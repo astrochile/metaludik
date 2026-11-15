@@ -1,17 +1,13 @@
 import Image from "next/image";
 import SectionHeading from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
-import { brand, services } from "@/lib/content";
+import AddToQuote from "@/components/AddToQuote";
+import { services } from "@/lib/content";
 
 // Todo a la vista: sin enlaces a otras páginas. Cada tarjeta muestra qué incluye
-// el servicio y lleva directo a cotizarlo por WhatsApp.
+// el servicio y lo suma a la cotización rápida (#contacto).
 // Desktop: 3 tarjetas arriba + 2 más anchas abajo (grilla de 6 columnas).
 const SPAN = ["lg:col-span-2", "lg:col-span-2", "lg:col-span-2", "lg:col-span-3", "lg:col-span-3"];
-
-const quoteLink = (service: string) =>
-  `https://wa.me/${brand.phoneHref}?text=${encodeURIComponent(
-    `Hola Metaludik, quiero cotizar: ${service}.`
-  )}`;
 
 export default function Services() {
   return (
@@ -57,15 +53,7 @@ export default function Services() {
                     ))}
                   </ul>
 
-                  <a
-                    href={quoteLink(s.title)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-auto inline-flex items-center gap-1.5 pt-6 text-sm font-semibold text-orange"
-                  >
-                    Cotizar este servicio
-                    <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
-                  </a>
+                  <AddToQuote slug={s.slug} className="mt-auto self-start pt-6" />
                 </div>
               </article>
             </Reveal>
