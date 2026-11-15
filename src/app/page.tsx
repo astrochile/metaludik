@@ -6,7 +6,6 @@ import TrustStrip from "@/components/home/TrustStrip";
 import Services from "@/components/home/Services";
 import WorkGallery from "@/components/home/WorkGallery";
 import Process from "@/components/home/Process";
-import Capability from "@/components/home/Capability";
 import About from "@/components/home/About";
 import IdeaQuote from "@/components/home/IdeaQuote";
 import Faq from "@/components/home/Faq";
@@ -15,7 +14,8 @@ import FinalCta from "@/components/home/FinalCta";
 // Landing principal (brief maestro). Responde en orden:
 // ¿Qué hace Metaludik? → ¿Pueden hacer lo que necesito? → ¿Se nota que saben? → ¿Cómo los contacto?
 // Secciones que salieron del Home pero se conservan en el código:
-// ProjectsSection, FeaturedProjects (tarjetas con enlace), ScaleEvaluation y Testimonials.
+// ProjectsSection, FeaturedProjects, Capability (integrada en About), ScaleEvaluation y Testimonials.
+// Regla: el Home no saca al cliente a otras páginas; todo termina en cotizar.
 export default function Home() {
   return (
     <>
@@ -29,11 +29,9 @@ export default function Home() {
         <WorkGallery />
         {/* 03 — Cómo trabajamos */}
         <Process />
-        {/* 04 — Capacidad técnica */}
-        <Capability />
-        {/* 05 — Nosotros */}
+        {/* 04 — Nosotros + capacidad técnica */}
         <About />
-        {/* 06 — CTA humano + cotización rápida (#contacto) */}
+        {/* 05 — CTA humano + cotización rápida (#contacto) */}
         <IdeaQuote />
         <Faq />
         {/* Cierre */}

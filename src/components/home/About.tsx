@@ -1,9 +1,15 @@
 import Image from "next/image";
-import Link from "next/link";
 import SectionHeading from "@/components/SectionHeading";
 import { Reveal, RevealMask } from "@/components/Reveal";
 
-// Versión resumida para el Home. La historia completa vive en /nosotros.
+// Nosotros + capacidad técnica en un solo bloque (Home más simple, sin salir de la página).
+const EQUIPO = [
+  { value: "CNC Forsun", label: "Corte plasma industrial" },
+  { value: "Mesa 3 × 2 m", label: "Planchas de gran formato" },
+  { value: "Hasta 35 mm", label: "En acero al carbono" },
+  { value: "Soldadura y montaje", label: "En taller y en terreno" },
+];
+
 export default function About() {
   return (
     <section id="nosotros" className="scroll-mt-20 border-t border-line py-20 sm:py-28">
@@ -23,7 +29,7 @@ export default function About() {
         </div>
 
         <div className="lg:col-span-5">
-          <SectionHeading number="05" eyebrow="Detrás del metal" title="Somos Metaludik." />
+          <SectionHeading number="04" eyebrow="Detrás del metal" title="Somos Metaludik." />
 
           <Reveal delay={0.08}>
             <p className="mt-5 text-[17px] leading-relaxed text-ink/75">
@@ -58,14 +64,16 @@ export default function About() {
             </blockquote>
           </Reveal>
 
+          {/* Capacidad técnica (antes sección propia) */}
           <Reveal delay={0.24}>
-            <Link
-              href="/nosotros"
-              className="group mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-ink hover:text-orange"
-            >
-              Conoce el taller
-              <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
-            </Link>
+            <dl className="mt-10 grid grid-cols-2 gap-px border border-line bg-line">
+              {EQUIPO.map((e) => (
+                <div key={e.value} className="bg-paper p-4">
+                  <dt className="font-display text-lg font-bold leading-tight text-ink">{e.value}</dt>
+                  <dd className="mt-0.5 text-xs text-ink/55">{e.label}</dd>
+                </div>
+              ))}
+            </dl>
           </Reveal>
         </div>
       </div>

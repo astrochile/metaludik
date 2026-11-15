@@ -41,7 +41,7 @@ export default function IdeaQuote() {
       <div className="mx-auto grid max-w-7xl gap-14 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-12 lg:gap-10">
         <div className="lg:col-span-6">
           <Reveal>
-            <Eyebrow number="06" label="Cotiza tu proyecto" dark />
+            <Eyebrow number="05" label="Cotiza tu proyecto" dark />
             <h2 className="mt-4 text-balance font-display text-4xl font-extrabold leading-[1.02] sm:text-5xl lg:text-6xl">
               ¿Tienes una idea pero no sabes cómo fabricarla?
             </h2>

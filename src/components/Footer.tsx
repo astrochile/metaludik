@@ -7,7 +7,6 @@ const LINKS = [
   { href: "/#proyectos", label: "Proyectos" },
   { href: "/#nosotros", label: "Nosotros" },
   { href: "/#contacto", label: "Contacto" },
-  { href: "/servicios", label: "Servicios en detalle" },
 ];
 
 // Footer simple (brief maestro). El contacto principal vive en el cierre del Home.
