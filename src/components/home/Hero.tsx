@@ -18,7 +18,7 @@ export default function Hero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[50%_20%] md:hidden"
+          className="object-cover object-[50%_30%] md:hidden"
         />
         <Image
           src={HERO_DESKTOP}
@@ -28,40 +28,30 @@ export default function Hero() {
           sizes="100vw"
           className="hidden object-cover object-[50%_45%] md:block"
         />
-        {/* Sombra solo donde va el texto: abajo en móvil, a la izquierda en escritorio */}
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/75 via-45% to-transparent md:from-ink/80 md:via-transparent md:via-30%" />
-        <div className="absolute inset-0 hidden bg-gradient-to-r from-ink/85 via-ink/35 via-45% to-transparent md:block" />
+        {/* Foto sin filtros de color: solo un oscurecido parejo para que el texto se lea */}
+        <div className="absolute inset-0 bg-black/45" />
       </div>
 
-      <div className="relative mx-auto flex min-h-[calc(100svh-60px)] max-w-7xl flex-col justify-end px-5 pb-14 pt-24 sm:px-8 sm:pb-20 lg:pb-24">
+      <div className="relative mx-auto flex min-h-[calc(100svh-60px)] max-w-7xl flex-col justify-center px-5 py-24 sm:px-8">
         <Reveal y={14}>
-          <Image
-            src="/images/brand/logo-full-negative.png"
-            alt="Metaludik"
-            width={1271}
-            height={773}
-            priority
-            sizes="(min-width: 1024px) 420px, (min-width: 640px) 340px, 240px"
-            className="h-auto w-[240px] sm:w-[340px] lg:w-[420px]"
-          />
-        </Reveal>
-
-        <Reveal delay={0.08} y={14}>
-          <div aria-hidden className="mt-10 h-px w-16 bg-orange sm:mt-12" />
-          <h1 className="mt-6 max-w-3xl text-balance font-display text-4xl font-extrabold leading-[1.02] text-white sm:text-5xl lg:text-6xl">
-            Ideas que toman forma en metal.
+          <p className="flex items-center gap-3 text-sm font-semibold text-white sm:text-base">
+            <span aria-hidden className="h-px w-10 bg-orange" />
+            Taller metalúrgico en Rancagua
+          </p>
+          <h1 className="mt-6 max-w-4xl text-balance font-display text-5xl font-extrabold leading-[0.98] text-white sm:text-7xl lg:text-8xl">
+            Ideas que toman forma en <span className="text-orange">metal</span>.
           </h1>
         </Reveal>
 
-        <Reveal delay={0.16} y={14}>
-          <p className="mt-5 max-w-xl text-balance text-base leading-relaxed text-white/70 sm:text-lg">
-            Corte plasma CNC, fabricación metálica, letreros, excavaciones y
-            proyectos a medida en Rancagua.
+        <Reveal delay={0.1} y={14}>
+          <p className="mt-6 max-w-xl text-pretty text-lg leading-relaxed text-white/85 sm:text-xl">
+            Corte plasma CNC, fabricación metálica, letreros y excavaciones.
+            Tú traes la idea, nosotros la hacemos realidad.
           </p>
         </Reveal>
 
-        <Reveal delay={0.24} y={14}>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+        <Reveal delay={0.18} y={14}>
+          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
             <Link
               href="#contacto"
               className="group inline-flex items-center justify-center gap-2 bg-orange px-7 py-4 text-[15px] font-semibold text-ink transition-colors hover:bg-white"
@@ -74,7 +64,7 @@ export default function Hero() {
             <Link
               href="#proyectos"
               data-cursor="Ver"
-              className="inline-flex items-center justify-center gap-2 border border-white/25 px-7 py-4 text-[15px] font-semibold text-white transition-colors hover:border-white hover:bg-white/10"
+              className="inline-flex items-center justify-center gap-2 border border-white/40 px-7 py-4 text-[15px] font-semibold text-white transition-colors hover:border-white hover:bg-white/10"
             >
               Ver trabajos
               <span aria-hidden>↓</span>
