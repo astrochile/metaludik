@@ -25,79 +25,82 @@ export const stats = [
   { value: "35", suffix: "mm", label: "espesor máx. en acero al carbono" },
 ];
 
-export const services = [
+// Cinco grandes soluciones (brief maestro). Soldadura, montaje e instalación
+// dejan de ser categoría propia: son capacidades transversales (ver `capabilities`).
+// Los slugs antiguos se conservan para no romper enlaces /servicios#slug.
+export type Service = {
+  slug: string;
+  title: string;
+  short: string;
+  photo: string;
+  photoAlt: string;
+  items: string[];
+};
+
+export const services: Service[] = [
   {
     slug: "corte-plasma-cnc",
-    title: "Corte Plasma CNC",
-    short: "Piezas, logos, letras y diseños cortados desde archivo con máquina Forsun industrial.",
+    title: "Corte plasma CNC",
+    short: "Logos, letras, piezas y paneles cortados con precisión en nuestra CNC Forsun industrial.",
     photo: "/images/proyectos/liceo-bicentenario.jpg",
-    photoAlt: "Corte plasma CNC de piezas metálicas en Metaludik",
-    items: [
-      "Corte de piezas y logos",
-      "Letras corporativas",
-      "Paneles decorativos",
-      "Escudos e insignias institucionales",
-      "Producción desde archivos DXF/DWG o diseño propio",
-    ],
+    photoAlt: "Escudo institucional cortado con plasma CNC en Metaludik",
+    items: ["Logos", "Letras", "Piezas", "Paneles", "Diseños personalizados"],
   },
   {
     slug: "estructuras-fabricacion-metalica",
-    title: "Estructuras y fabricación metálica",
-    short: "Bastidores, soportes, portones y rejas fabricados a medida.",
+    title: "Fabricación metálica",
+    short: "Estructuras, portones, rejas y soportes fabricados a medida.",
     photo: "/images/proyectos/porton-listones.jpg",
-    photoAlt: "Estructura metálica y portón fabricado por Metaludik",
-    items: [
-      "Estructuras metálicas",
-      "Bastidores y soportes",
-      "Cajones metálicos",
-      "Portones y rejas",
-      "Cierres perimetrales",
-      "Proyectos estructurales a medida",
-    ],
-  },
-  {
-    slug: "soldadura-montajes",
-    title: "Soldadura y montajes",
-    short: "Soldadura calificada, armado y trabajo en terreno cuando el proyecto lo requiere.",
-    photo: "/images/proyectos/pieza-hexagonal.jpg",
-    photoAlt: "Taller de fabricación y soldadura de Metaludik en Rancagua",
-    items: [
-      "Soldadura calificada",
-      "Armado y uniones",
-      "Refuerzos",
-      "Instalaciones",
-      "Montaje y trabajo en terreno",
-    ],
+    photoAlt: "Portón corredizo de listones metálicos fabricado por Metaludik",
+    items: ["Estructuras", "Portones", "Rejas", "Soportes", "Pasamanos", "Fabricación a medida"],
   },
   {
     slug: "letreros-soluciones-comerciales",
     title: "Letreros y soluciones comerciales",
-    short: "Letreros metálicos e iluminados, y estructuras para gráfica publicitaria.",
+    short: "Letreros, logos metálicos y estructuras publicitarias para fachadas y comercios.",
     photo: "/images/proyectos/la-masa-madre-01.jpg",
-    photoAlt: "Letrero metálico corporativo iluminado fabricado por Metaludik",
+    photoAlt: "Letrero metálico iluminado La Masa Madre fabricado por Metaludik",
     items: [
-      "Letreros metálicos y logos corporativos",
-      "Letreros luminosos",
-      "Estructuras y bastidores para gráficas",
-      "Instalación y montaje",
-      "Soluciones para fachadas y comercios",
+      "Letreros",
+      "Logos metálicos",
+      "Fachadas",
+      "Estructuras publicitarias",
+      "Soluciones para comercios",
     ],
   },
   {
     slug: "proyectos-personalizados-decoracion",
-    title: "Proyectos personalizados y decoración",
-    short: "Braseros, parrillas, pasamanos y objetos con nombre — ideas hechas a medida.",
+    title: "Proyectos especiales",
+    short: "Braseros, parrillas, decoración y regalos: ideas hechas a medida.",
     photo: "/images/proyectos/brasero-corraleros.jpg",
     photoAlt: "Brasero metálico personalizado fabricado por Metaludik",
+    items: ["Braseros", "Parrillas", "Decoración", "Regalos", "Proyectos personalizados"],
+  },
+  {
+    slug: "excavaciones-miniexcavadora",
+    title: "Excavaciones con miniexcavadora",
+    short: "Excavaciones y movimiento de tierra para obras, parcelas y preparación de terrenos.",
+    photo: "/images/proyectos/miniexcavadora-sebmaq.jpg",
+    photoAlt: "Miniexcavadora amarilla de Metaludik lista para trabajos de excavación",
     items: [
-      "Braseros y fogones",
-      "Parrillas y asadores",
-      "Pasamanos y terminaciones",
-      "Piezas decorativas iluminadas",
-      "Objetos con nombres o logotipos",
-      "Regalos corporativos y familiares",
+      "Zanjas",
+      "Fundaciones",
+      "Piscinas",
+      "Drenajes",
+      "Nivelación",
+      "Limpieza de terrenos",
+      "Extracción de raíces",
+      "Trabajos en parcelas",
+      "Preparación de radieres",
     ],
   },
+];
+
+// Capacidades transversales (antes categoría "Soldadura y montajes").
+export const capabilities = [
+  "Soldadura calificada",
+  "Armado y uniones",
+  "Montaje e instalación en terreno",
 ];
 
 export type Project = {
@@ -185,7 +188,7 @@ export const projects: Project[] = [
     slug: "liceo-bicentenario-oscar-castro",
     title: "Escudo institucional Liceo Bicentenario Oscar Castro Z.",
     client: "Liceo Bicentenario Oscar Castro Z.",
-    category: "Corte Plasma CNC",
+    category: "Corte plasma CNC",
     filterKey: "corte-cnc",
     location: "Rancagua",
     alt: "Escudo institucional cortado con plasma CNC para el Liceo Bicentenario Oscar Castro Z.",
@@ -204,7 +207,7 @@ export const projects: Project[] = [
     slug: "almacen-la-familia",
     title: "Estructura y bastidor publicitario Almacén La Familia",
     client: "Almacén La Familia",
-    category: "Estructuras y fabricación metálica",
+    category: "Fabricación metálica",
     filterKey: "estructuras",
     location: "Rancagua",
     alt: "Estructura y bastidor metálico fabricado por Metaludik para Almacén La Familia",
@@ -224,7 +227,7 @@ export const projects: Project[] = [
     slug: "jardin-infantil-bucalemu",
     title: "Rejas galvanizadas — Jardín Infantil de Bucalemu",
     client: "Jardín infantil, Bucalemu",
-    category: "Estructuras y fabricación metálica",
+    category: "Fabricación metálica",
     filterKey: "estructuras",
     location: "Bucalemu, zona costera",
     alt: "Rejas metálicas galvanizadas fabricadas para un jardín infantil en Bucalemu",
@@ -243,7 +246,7 @@ export const projects: Project[] = [
     slug: "brasero-somos-corraleros",
     title: "Brasero personalizado \"Somos Corraleros\"",
     client: "Proyecto familiar",
-    category: "Proyectos personalizados y decoración",
+    category: "Proyectos especiales",
     filterKey: "personalizados",
     location: "Rancagua",
     alt: "Brasero metálico personalizado con diseño cortado en plasma CNC",
@@ -262,7 +265,7 @@ export const projects: Project[] = [
     slug: "porton-residencial",
     title: "Portón corredizo de listones",
     client: "Proyecto residencial",
-    category: "Estructuras y fabricación metálica",
+    category: "Fabricación metálica",
     filterKey: "estructuras",
     location: "Rancagua",
     alt: "Portón corredizo de listones metálicos fabricado por Metaludik",
@@ -281,7 +284,7 @@ export const projects: Project[] = [
     slug: "parrilla-familia-contreras",
     title: "Parrilla personalizada Familia Contreras Rey",
     client: "Proyecto familiar",
-    category: "Proyectos personalizados y decoración",
+    category: "Proyectos especiales",
     filterKey: "personalizados",
     location: "Rancagua",
     alt: "Parrilla metálica personalizada con apellido de familia cortado en el cuerpo",
@@ -308,24 +311,45 @@ export const project_filters = [
 
 export const process_steps = [
   {
-    title: "Conversamos",
-    text: "Cuéntanos qué necesitas: una fotografía, un dibujo, una referencia o simplemente una idea.",
+    title: "Cuéntanos tu idea",
+    text: "Una foto, un dibujo, unas medidas o simplemente lo que necesitas.",
   },
   {
-    title: "Diseñamos",
-    text: "Convertimos la idea en una solución fabricable, definiendo materiales y medidas.",
+    title: "La diseñamos",
+    text: "La convertimos en algo fabricable: materiales, medidas y solución.",
   },
   {
-    title: "Fabricamos",
-    text: "Cortamos, soldamos y damos terminación a cada pieza en nuestro taller.",
+    title: "La fabricamos",
+    text: "Cortamos, soldamos y terminamos cada pieza en nuestro taller.",
   },
   {
-    title: "Instalamos",
-    text: "Llevamos el proyecto a su lugar y realizamos el montaje cuando corresponde.",
+    title: "La hacemos realidad",
+    text: "Entregamos o instalamos en terreno cuando corresponde.",
   },
 ];
 
+// Máximo cuatro preguntas en el Home (brief maestro).
 export const faqs = [
+  {
+    q: "¿Trabajan con empresas y particulares?",
+    a: "Sí, con ambos. Trabajamos con comercios, instituciones y empresas, y también con personas que buscan un proyecto personalizado: un regalo, un brasero, una parrilla con nombre, un pasamanos.",
+  },
+  {
+    q: "¿Necesito tener un diseño o plano?",
+    a: "No. Puedes llegar con una fotografía, un dibujo, unas medidas, una referencia o simplemente una idea, y te ayudamos a convertirla en algo fabricable. Si ya tienes un archivo (PDF, DXF, DWG o una imagen), también nos sirve.",
+  },
+  {
+    q: "¿Trabajan fuera de Rancagua?",
+    a: "Atendemos principalmente Rancagua. Fuera de la ciudad también es posible, coordinando la logística e instalación con anticipación.",
+  },
+  {
+    q: "¿Cuánto demora un proyecto?",
+    a: "Depende del proyecto. Para trabajos simples, el plazo habitual es desde 5 días hábiles. Para proyectos más grandes, el plazo se define al cotizar.",
+  },
+];
+
+// Preguntas anteriores, conservadas para páginas internas si se necesitan.
+export const faqs_more = [
   {
     q: "¿Metaludik hace todo el proceso, desde el diseño hasta la instalación?",
     a: "Sí. Podemos acompañar el proyecto completo: interpretar la idea, adaptar el diseño, cortar las piezas, soldar, armar, hacer las terminaciones e instalar en terreno.",
@@ -333,22 +357,6 @@ export const faqs = [
   {
     q: "¿Con qué materiales trabajan?",
     a: "Principalmente acero al carbono, y también acero inoxidable según el proyecto. La máquina de corte plasma CNC corta hasta 35 mm en acero al carbono y hasta 10 mm en acero inoxidable.",
-  },
-  {
-    q: "¿Cuánto se demora un proyecto?",
-    a: "Depende del proyecto. Para trabajos simples, el plazo habitual es desde 5 días hábiles. Para proyectos más grandes, el plazo se define al cotizar.",
-  },
-  {
-    q: "¿Trabajan solo en Rancagua?",
-    a: "Atendemos principalmente Rancagua. Fuera de la ciudad también es posible, coordinando la logística e instalación con anticipación.",
-  },
-  {
-    q: "¿Puedo enviar mi propio diseño o logo?",
-    a: "Sí. Puedes enviarnos un archivo (PDF, DXF, DWG, o incluso una imagen) y evaluamos cómo llevarlo a metal con la mayor fidelidad posible al diseño original.",
-  },
-  {
-    q: "¿Hacen proyectos para empresas y también para personas particulares?",
-    a: "Sí, ambos. Trabajamos con comercios, instituciones y empresas, y también con personas que buscan un proyecto personalizado — un regalo, un brasero, una parrilla con nombre, un pasamanos.",
   },
   {
     q: "¿Metaludik puede evaluar un proyecto industrial más grande?",

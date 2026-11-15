@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -11,7 +12,7 @@ import { services, projects } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Servicios",
   description:
-    "Corte plasma CNC, estructuras metálicas, soldadura y montajes, letreros corporativos y proyectos personalizados. Servicios reales de Metaludik en Rancagua.",
+    "Corte plasma CNC, fabricación metálica, letreros, proyectos especiales y excavaciones con miniexcavadora. Servicios de Metaludik en Rancagua.",
 };
 
 export default function ServiciosPage() {
@@ -21,8 +22,8 @@ export default function ServiciosPage() {
       <main>
         <PageHeader
           eyebrow="Servicios"
-          title="Cinco formas de trabajar el metal"
-          lede="Desde el corte hasta la instalación en terreno. Esto es lo que hacemos, sin categorías vacías: cada bloque tiene proyectos reales detrás."
+          title="Lo que hacemos"
+          lede="Del corte a la instalación en terreno, y ahora también excavaciones. Soldadura y montaje son parte de todo lo que hacemos."
         />
 
         <div className="mx-auto max-w-7xl divide-y divide-line px-5 sm:px-8">
@@ -71,12 +72,15 @@ export default function ServiciosPage() {
                         ))}
                       </div>
                     ) : (
-                      <div className="flex h-full min-h-[220px] items-center justify-center border border-dashed border-line bg-paper-dim p-8 text-center">
-                        <p className="max-w-xs text-sm text-steel-mid">
-                          Estamos documentando más casos de esta categoría.
-                          Cuéntanos tu proyecto y sé de los primeros en aparecer aquí.
-                        </p>
-                      </div>
+                      <Reveal y={14} className="relative aspect-[4/3] w-full overflow-hidden bg-graphite">
+                        <Image
+                          src={s.photo}
+                          alt={s.photoAlt}
+                          fill
+                          sizes="(min-width: 1024px) 58vw, 100vw"
+                          className="object-cover"
+                        />
+                      </Reveal>
                     )}
                   </div>
                 </div>

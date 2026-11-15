@@ -2,74 +2,60 @@ import Image from "next/image";
 import SectionHeading from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
 
+// Solo lo más relevante (brief maestro). El detalle técnico completo vive en el dossier PDF.
 const SPECS = [
-  { label: "Máquina", value: "Forsun, corte plasma CNC industrial" },
-  { label: "Mesa de corte", value: "3 x 2 metros" },
-  { label: "Acero al carbono", value: "hasta 35 mm de espesor" },
-  { label: "Acero inoxidable", value: "hasta 10 mm de espesor" },
-  { label: "Material principal", value: "Acero al carbono" },
-  { label: "Material ocasional", value: "Acero inoxidable" },
+  { value: "CNC Forsun", label: "Corte plasma industrial" },
+  { value: "3 × 2 m", label: "Mesa de corte" },
+  { value: "Hasta 35 mm", label: "En acero al carbono" },
+  { value: "Soldadura", label: "Armado y uniones en taller" },
+  { value: "Montaje", label: "Instalación en terreno" },
 ];
 
 export default function Capability() {
   return (
-    <section id="capacidad" className="metal-texture-dark scroll-mt-20 border-t border-white/10 bg-graphite py-20 text-white sm:py-28">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <SectionHeading
-          number="05"
-          eyebrow="Capacidad"
-          title="Tenemos la tecnología para hacerlo"
-          dark
-        />
+    <section
+      id="capacidad"
+      className="metal-texture-dark scroll-mt-20 border-t border-white/10 bg-graphite py-20 text-white sm:py-28"
+    >
+      <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-12 lg:items-center lg:gap-10">
+        <div className="lg:col-span-6">
+          <SectionHeading number="04" eyebrow="Capacidad técnica" title="Tenemos el equipo para hacerlo." dark />
 
-        <div className="mt-12 grid gap-8 lg:grid-cols-12">
-          <Reveal className="lg:col-span-5">
-            <div className="relative aspect-[4/5] w-full overflow-hidden">
-              <Image
-                src="/images/proyectos/maquina-cnc.jpg"
-                alt="Máquina de corte plasma CNC Forsun del taller Metaludik en Rancagua"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </Reveal>
-
-          <div className="lg:col-span-7">
-            <div className="grid grid-cols-1 gap-px overflow-hidden bg-white/10 sm:grid-cols-2">
-              {SPECS.map((spec, i) => (
-                <Reveal key={spec.label} delay={i * 0.05} y={12}>
-                  <div className="h-full bg-graphite p-6">
-                    <p className="text-xs font-medium text-white/45">{spec.label}</p>
-                    <p className="mt-2 font-display text-xl font-bold text-white">
-                      {spec.value}
-                    </p>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-
-            <Reveal delay={0.3}>
-              <div className="mt-6 flex flex-col items-start gap-4 border border-white/10 bg-white/5 p-6 sm:flex-row sm:items-center sm:justify-between">
-                <div>
-                  <p className="font-display text-lg font-bold text-white">
-                    Dossier técnico de corte plasma CNC
-                  </p>
-                  <p className="mt-1 text-sm text-white/55">
-                    Más detalles sobre el proceso y la tecnología, en PDF.
-                  </p>
+          <dl className="mt-10 border-t border-white/10">
+            {SPECS.map((spec, i) => (
+              <Reveal key={spec.value} delay={i * 0.04} y={8}>
+                <div className="flex items-baseline justify-between gap-6 border-b border-white/10 py-4">
+                  <dt className="font-display text-2xl font-bold text-white sm:text-3xl">{spec.value}</dt>
+                  <dd className="text-right text-sm text-white/55">{spec.label}</dd>
                 </div>
-                <a
-                  href="/docs/metaludik-dossier-corte-cnc.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="shrink-0 inline-flex items-center gap-2 bg-orange px-5 py-3 text-sm font-semibold text-ink transition-colors hover:bg-white"
-                >
-                  Ver dossier
-                </a>
-              </div>
-            </Reveal>
-          </div>
+              </Reveal>
+            ))}
+          </dl>
+
+          <Reveal delay={0.2}>
+            <a
+              href="/docs/metaludik-dossier-corte-cnc.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group mt-8 inline-flex items-center gap-2 text-sm font-semibold text-orange"
+            >
+              Ver dossier técnico de corte CNC (PDF)
+              <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
+            </a>
+          </Reveal>
         </div>
+
+        <Reveal className="lg:col-span-6">
+          <div className="relative aspect-[4/5] w-full overflow-hidden bg-ink sm:aspect-[4/3] lg:aspect-[4/5]">
+            <Image
+              src="/images/proyectos/maquina-cnc.jpg"
+              alt="Máquina de corte plasma CNC Forsun del taller Metaludik en Rancagua"
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover"
+            />
+          </div>
+        </Reveal>
       </div>
     </section>
   );

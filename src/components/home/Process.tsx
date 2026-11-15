@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import SectionHeading from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
@@ -43,13 +42,12 @@ export default function Process() {
   }, []);
 
   return (
-    <section id="proceso" className="scroll-mt-20 bg-ink py-24 text-white sm:py-32">
+    <section id="proceso" className="scroll-mt-20 bg-ink py-20 text-white sm:py-28">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeading
-          number="04"
+          number="03"
           eyebrow="Cómo trabajamos"
-          title="Así convertimos una idea en metal"
-          lede="Cada proyecto es distinto, pero hay algo que se repite: escuchamos, pensamos la solución y la fabricamos."
+          title="De la idea al metal, en cuatro pasos"
           dark
         />
 
@@ -79,7 +77,7 @@ export default function Process() {
                         {String(i + 1).padStart(2, "0")}
                       </span>
                     </div>
-                    <h3 className="font-display text-lg font-bold uppercase tracking-tight text-white">
+                    <h3 className="font-display text-xl font-bold leading-tight text-white">
                       {step.title}
                     </h3>
                     <p className="mt-2 max-w-xs text-sm leading-relaxed text-white/55">
@@ -92,20 +90,6 @@ export default function Process() {
           </ol>
         </div>
 
-        <Reveal delay={0.3}>
-          <div className="mt-24 border-t border-white/10 pt-14 text-center">
-            <p className="mx-auto max-w-2xl text-balance font-display text-3xl font-extrabold leading-[1.1] sm:text-4xl">
-              Tú traes la idea. Nosotros ponemos el metal, el oficio y cómo
-              hacerla realidad.
-            </p>
-            <Link
-              href="/cotizar"
-              className="mt-8 inline-flex items-center gap-2 bg-orange px-7 py-3.5 text-sm font-semibold text-ink transition-colors hover:bg-white"
-            >
-              Cuéntanos tu proyecto →
-            </Link>
-          </div>
-        </Reveal>
       </div>
     </section>
   );

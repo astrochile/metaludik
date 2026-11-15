@@ -9,7 +9,7 @@ import "@fontsource/manrope/600.css";
 import "@fontsource/manrope/700.css";
 import "./globals.css";
 import CustomCursor from "@/components/CustomCursor";
-import { brand } from "@/lib/content";
+import { brand, services } from "@/lib/content";
 
 const SITE_URL = "https://metaludik.cl";
 
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s — Metaludik",
   },
   description:
-    "Metaludik, taller de Samik Garrido en Rancagua: corte plasma CNC, estructuras metálicas, soldadura, letreros metálicos y proyectos personalizados a medida.",
+    "Metaludik, taller de Samik Garrido en Rancagua: corte plasma CNC, fabricación metálica, letreros, proyectos a medida y excavaciones con miniexcavadora.",
   keywords: [
     "Metaludik",
     "Samik Garrido",
@@ -32,6 +32,8 @@ export const metadata: Metadata = {
     "letreros metálicos Rancagua",
     "rejas metálicas Rancagua",
     "parrillas metálicas Rancagua",
+    "excavaciones Rancagua",
+    "miniexcavadora Rancagua",
     "metalistería",
     "fabricación a medida",
   ],
@@ -63,7 +65,7 @@ const jsonLd = {
   name: "Metaludik",
   alternateName: "Metalmecánica Tecnológica S.G.A.",
   description:
-    "Taller de fabricación metálica en Rancagua: corte plasma CNC, estructuras metálicas, soldadura, letreros metálicos y proyectos personalizados a medida.",
+    "Taller de fabricación metálica en Rancagua: corte plasma CNC, fabricación metálica, letreros, proyectos a medida y excavaciones con miniexcavadora.",
   url: SITE_URL,
   telephone: brand.phone,
   email: brand.email,
@@ -79,13 +81,10 @@ const jsonLd = {
     name: "Samik Garrido",
   },
   sameAs: [brand.instagram],
-  makesOffer: [
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Corte Plasma CNC" } },
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Estructuras y fabricación metálica" } },
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Soldadura y montajes" } },
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Letreros y soluciones comerciales" } },
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Proyectos personalizados y decoración" } },
-  ],
+  makesOffer: [...services.map((s) => s.title), "Soldadura y montaje"].map((name) => ({
+    "@type": "Offer",
+    itemOffered: { "@type": "Service", name },
+  })),
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

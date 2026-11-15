@@ -9,10 +9,10 @@ export default function Services() {
     <section id="servicios" className="scroll-mt-20 border-t border-line bg-paper-dim py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeading
-          number="02"
+          number="01"
           eyebrow="Qué hacemos"
           title="Del diseño al metal"
-          lede="Cinco formas de trabajar el metal, con proyectos reales detrás de cada una."
+          lede="Cinco soluciones, del corte CNC a la preparación de terrenos."
         />
 
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -28,6 +28,7 @@ export default function Services() {
                     src={s.photo}
                     alt={s.photoAlt}
                     fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     className="object-cover transition-transform duration-500 ease-[cubic-bezier(0.65,0,0.35,1)] group-hover:scale-[1.05]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/0 to-transparent" />
@@ -37,7 +38,7 @@ export default function Services() {
                 </div>
                 <div className="flex flex-1 flex-col justify-between p-6">
                   <div>
-                    <h3 className="font-display text-lg font-bold uppercase leading-tight text-ink">
+                    <h3 className="font-display text-xl font-bold leading-tight text-ink">
                       {s.title}
                     </h3>
                     <p className="mt-2 text-sm leading-relaxed text-ink/65">{s.short}</p>
@@ -56,18 +57,18 @@ export default function Services() {
           <Reveal delay={0.25} y={14}>
             <Link
               href="/servicios"
-              className="group flex h-full min-h-[220px] flex-col justify-between bg-orange p-6"
+              className="group flex h-full min-h-[220px] flex-col justify-between border-t-2 border-orange bg-ink p-6 text-white"
             >
               <div>
-                <span className="font-display text-sm font-bold text-ink/60">+</span>
-                <h3 className="mt-4 font-display text-lg font-bold uppercase leading-tight text-ink">
+                <span className="font-display text-sm font-bold text-orange">+</span>
+                <h3 className="mt-4 font-display text-xl font-bold leading-tight text-white">
                   Ver todos los servicios en detalle
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink/70">
-                  Alcance, materiales y casos de referencia de cada categoría.
+                <p className="mt-2 text-sm leading-relaxed text-white/60">
+                  Qué incluye cada servicio y trabajos de referencia.
                 </p>
               </div>
-              <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-ink">
+              <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-orange">
                 Ir a Servicios
                 <span aria-hidden className="transition-transform group-hover:translate-x-1">
                   →
