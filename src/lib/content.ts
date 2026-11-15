@@ -367,3 +367,125 @@ export const faqs_more = [
 export const testimonials: { quote: string; author: string; role: string }[] = [
   // Pendiente: recopilar testimonios reales de clientes antes de publicar el sitio.
 ];
+
+// Galería del Home: trabajos reales, sin página de detalle.
+// confirmar: true = foto sin proyecto asociado; descripción basada solo en lo que se ve.
+export type GalleryItem = {
+  src: string;
+  width: number;
+  height: number;
+  title: string;
+  category: string;
+  text: string;
+  confirmar?: boolean;
+};
+
+export const gallery: GalleryItem[] = [
+  {
+    src: "/images/proyectos/la-masa-madre-01.jpg",
+    width: 1313,
+    height: 1436,
+    title: "La Masa Madre",
+    category: "Letreros y soluciones comerciales",
+    text: "Letrero circular retroiluminado con tipografía de marca cortada en metal.",
+  },
+  {
+    src: "/images/proyectos/liceo-bicentenario.jpg",
+    width: 1080,
+    height: 1350,
+    title: "Liceo Bicentenario Oscar Castro Z.",
+    category: "Corte plasma CNC",
+    text: "Escudo institucional de precisión cortado en una sola pieza de acero.",
+  },
+  {
+    src: "/images/proyectos/porton-arbol.jpg",
+    width: 1080,
+    height: 1440,
+    title: "Portón con diseño de árbol",
+    category: "Corte plasma CNC",
+    text: "Paneles calados con un diseño de árbol cortado en plasma.",
+    confirmar: true,
+  },
+  {
+    src: "/images/proyectos/clinica-omnia.jpg",
+    width: 1200,
+    height: 1600,
+    title: "Clínica Dental Omnia",
+    category: "Letreros y soluciones comerciales",
+    text: "Letrero de fachada de gran formato con iluminación integrada.",
+  },
+  {
+    src: "/images/proyectos/brasero-corraleros.jpg",
+    width: 1440,
+    height: 1920,
+    title: "Brasero Somos Corraleros",
+    category: "Proyectos especiales",
+    text: "Brasero a medida con diseño y texto personalizado cortado en metal.",
+  },
+  {
+    src: "/images/proyectos/pieza-hexagonal.jpg",
+    width: 1344,
+    height: 1506,
+    title: "Pieza geométrica retroiluminada",
+    category: "Corte plasma CNC",
+    text: "Pieza decorativa de formas hexagonales cortada en acero, con luz posterior.",
+    confirmar: true,
+  },
+  {
+    src: "/images/proyectos/almacen-la-familia.jpg",
+    width: 1200,
+    height: 1600,
+    title: "Almacén La Familia",
+    category: "Fabricación metálica",
+    text: "Estructura y bastidor para soporte de gráfica publicitaria en fachada.",
+  },
+  {
+    src: "/images/proyectos/parrilla-contreras.jpg",
+    width: 960,
+    height: 1280,
+    title: "Parrilla Familia Contreras Rey",
+    category: "Proyectos especiales",
+    text: "Parrilla a medida personalizada con el apellido de la familia.",
+  },
+  {
+    src: "/images/proyectos/licoreria-iturriaga.jpg",
+    width: 1080,
+    height: 1350,
+    title: "Licorería Iturriaga",
+    category: "Letreros y soluciones comerciales",
+    text: "Logo de marca cortado en metal, montado sobre soporte de madera.",
+  },
+  {
+    src: "/images/proyectos/porton-galvanizado.jpg",
+    width: 1200,
+    height: 1600,
+    title: "Jardín infantil, Bucalemu",
+    category: "Fabricación metálica",
+    text: "Rejas galvanizadas resistentes a la corrosión de la zona costera.",
+  },
+  {
+    src: "/images/proyectos/la-masa-madre-02.jpg",
+    width: 1440,
+    height: 1734,
+    title: "La Masa Madre",
+    category: "Letreros y soluciones comerciales",
+    text: "Versión colgante del letrero para el ingreso del local.",
+  },
+  {
+    src: "/images/proyectos/pasamanos.jpg",
+    width: 1440,
+    height: 1920,
+    title: "Pasamanos de escalera",
+    category: "Fabricación metálica",
+    text: "Pasamanos metálico a medida instalado en escalera interior.",
+    confirmar: true,
+  },
+  {
+    src: "/images/proyectos/porton-listones.jpg",
+    width: 640,
+    height: 1138,
+    title: "Portón corredizo de listones",
+    category: "Fabricación metálica",
+    text: "Estructura metálica corrediza para acceso vehicular residencial.",
+  },
+];

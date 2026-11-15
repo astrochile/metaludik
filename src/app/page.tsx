@@ -4,7 +4,7 @@ import WhatsAppFloat from "@/components/WhatsAppFloat";
 import Hero from "@/components/home/Hero";
 import TrustStrip from "@/components/home/TrustStrip";
 import Services from "@/components/home/Services";
-import FeaturedProjects from "@/components/home/FeaturedProjects";
+import WorkGallery from "@/components/home/WorkGallery";
 import Process from "@/components/home/Process";
 import Capability from "@/components/home/Capability";
 import About from "@/components/home/About";
@@ -15,7 +15,7 @@ import FinalCta from "@/components/home/FinalCta";
 // Landing principal (brief maestro). Responde en orden:
 // ¿Qué hace Metaludik? → ¿Pueden hacer lo que necesito? → ¿Se nota que saben? → ¿Cómo los contacto?
 // Secciones que salieron del Home pero se conservan en el código:
-// ProjectsSection (galería con filtros), ScaleEvaluation y Testimonials.
+// ProjectsSection, FeaturedProjects (tarjetas con enlace), ScaleEvaluation y Testimonials.
 export default function Home() {
   return (
     <>
@@ -25,8 +25,8 @@ export default function Home() {
         <TrustStrip />
         {/* 01 — Qué hacemos */}
         <Services />
-        {/* 02 — Proyectos */}
-        <FeaturedProjects />
+        {/* 02 — Galería de trabajos (sin página de detalle) */}
+        <WorkGallery />
         {/* 03 — Cómo trabajamos */}
         <Process />
         {/* 04 — Capacidad técnica */}

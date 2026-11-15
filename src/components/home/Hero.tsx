@@ -1,32 +1,36 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
 
-// Video real de la CNC/plasma. Para reemplazarlo por el definitivo basta con
-// sobrescribir este archivo (mp4, sin audio, idealmente ≤ 10 MB) y su poster.
-const HERO_VIDEO_SRC = "/video/cnc-hero.mp4";
-const HERO_POSTER = "/images/brand/hero-poster.jpg";
+// Imagen real del taller: cuadro del corte plasma CNC (recortado del video original).
+// Para cambiarla basta con reemplazar estos dos archivos manteniendo el nombre.
+const HERO_DESKTOP = "/images/brand/hero-plasma.jpg";
+const HERO_MOBILE = "/images/brand/hero-plasma-movil.jpg";
+const HERO_ALT = "Máquina de corte plasma CNC de Metaludik cortando una plancha de acero, con chispas";
 
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-ink">
       <div className="absolute inset-0">
-        <video
-          className="h-full w-full object-cover opacity-50"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          poster={HERO_POSTER}
-          aria-hidden="true"
-        >
-          <source src={HERO_VIDEO_SRC} type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/60 to-ink/30" />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/40 to-transparent" />
+        <Image
+          src={HERO_MOBILE}
+          alt={HERO_ALT}
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[50%_20%] md:hidden"
+        />
+        <Image
+          src={HERO_DESKTOP}
+          alt={HERO_ALT}
+          fill
+          priority
+          sizes="100vw"
+          className="hidden object-cover object-[50%_45%] md:block"
+        />
+        {/* Sombra solo donde va el texto: abajo en móvil, a la izquierda en escritorio */}
+        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/75 via-45% to-transparent md:from-ink/80 md:via-transparent md:via-30%" />
+        <div className="absolute inset-0 hidden bg-gradient-to-r from-ink/85 via-ink/35 via-45% to-transparent md:block" />
       </div>
 
       <div className="relative mx-auto flex min-h-[calc(100svh-60px)] max-w-7xl flex-col justify-end px-5 pb-14 pt-24 sm:px-8 sm:pb-20 lg:pb-24">

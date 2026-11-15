@@ -1,7 +1,8 @@
+import Image from "next/image";
 import { Reveal } from "@/components/Reveal";
 import { brand } from "@/lib/content";
 
-// Cierre del Home. Reutiliza el video CNC del Hero (mismo archivo, ya en caché).
+// Cierre del Home sobre una imagen real del corte plasma.
 export default function FinalCta() {
   const wa = `https://wa.me/${brand.phoneHref}?text=${encodeURIComponent(
     "Hola Metaludik, quiero cotizar un proyecto."
@@ -10,17 +11,13 @@ export default function FinalCta() {
   return (
     <section id="cierre" className="relative overflow-hidden bg-ink text-white">
       <div className="absolute inset-0" aria-hidden>
-        <video
-          className="h-full w-full object-cover opacity-40"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="none"
-          poster="/images/brand/hero-poster.jpg"
-        >
-          <source src="/video/cnc-hero.mp4" type="video/mp4" />
-        </video>
+        <Image
+          src="/images/brand/cierre-plasma.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover opacity-45"
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-ink/40" />
       </div>
 
